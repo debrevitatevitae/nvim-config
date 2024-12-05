@@ -23,7 +23,11 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 			lspconfig.pyright.setup({})
-			lspconfig.ruff.setup({})
+			lspconfig.ruff.setup({
+                init_options = {
+                    lineLength = 100,
+                }
+            })
 			lspconfig.rust_analyzer.setup({})
 		end,
 	},
